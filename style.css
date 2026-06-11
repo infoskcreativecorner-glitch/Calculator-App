@@ -1,0 +1,148 @@
+:root {
+  --bg-main: #24272f;
+  --bg-alt: #2f333c;
+  --panel: #1d2027;
+  --text-main: #f4f8fa;
+  --text-muted: #9ba7b2;
+  --accent: #5ee9e6;
+  --accent-strong: #37d6d2;
+  --danger: #ff6c75;
+  --ring: rgba(94, 233, 230, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(94, 233, 230, 0.12), transparent 32%),
+    radial-gradient(circle at 80% 90%, rgba(94, 233, 230, 0.08), transparent 35%),
+    linear-gradient(125deg, var(--bg-main), var(--bg-alt));
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 400px;
+}
+
+.calculator {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(94, 233, 230, 0.25);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.calc-header {
+  margin-bottom: 14px;
+}
+
+.brand {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.subtext {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.display-wrap {
+  margin-bottom: 14px;
+}
+
+.display {
+  width: 100%;
+  border: 1px solid rgba(94, 233, 230, 0.25);
+  border-radius: 12px;
+  background-color: #12151b;
+  color: var(--text-main);
+  font-size: 2rem;
+  text-align: right;
+  padding: 14px;
+  outline: none;
+}
+
+.status {
+  margin: 6px 4px 0;
+  min-height: 1.2rem;
+  font-size: 0.8rem;
+  color: var(--danger);
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  border: 1px solid rgba(94, 233, 230, 0.2);
+  border-radius: 12px;
+  background: #21252d;
+  color: var(--text-main);
+  font-size: 1.05rem;
+  font-weight: 600;
+  min-height: 54px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.btn:hover {
+  background-color: #2a2f39;
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.btn-soft {
+  color: var(--accent);
+}
+
+.btn-op {
+  background-color: rgba(94, 233, 230, 0.15);
+  color: var(--accent);
+}
+
+.btn-eq {
+  background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+  border-color: transparent;
+  color: #10272a;
+}
+
+.btn-eq:hover {
+  box-shadow: 0 0 0 3px var(--ring), 0 8px 16px rgba(94, 233, 230, 0.25);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 420px) {
+  .display {
+    font-size: 1.7rem;
+  }
+}
